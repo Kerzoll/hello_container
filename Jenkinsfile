@@ -14,13 +14,13 @@ pipeline {
     stage("create docker image") {
       steps {
         echo " ============== start building image =================="
-        sh 'docker build --name hello_container -t kerzoll/hello_container:latest . '
+        sh 'docker build -t kerzoll/hello_container:latest . '
       }
     }
     stage("run docker image") {
       steps{
        echo " ============== run docker image =================="
-       sh "docker run -it -d hello_container"
+       sh "docker run -it -d --name hello_container kerzoll/hello_container"
       }
     }
     stage("login to Docker Hub") {
