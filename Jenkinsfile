@@ -14,7 +14,7 @@ pipeline {
     stage("create docker image") {
       steps {
         echo " ============== start building image =================="
-        sh 'docker build -t kerzoll/helloworld:latest . '
+        sh 'docker build -t kerzoll/hello_container:latest . '
       }
     }
     stage("login to Docker Hub") {
