@@ -20,7 +20,7 @@ pipeline {
     stage("run docker image") {
       steps{
        echo " ============== run docker image =================="
-       sh "docker run -it -d --name hello_container kerzoll/hello_container"
+       sh "docker run -it -d --name hello_container -p 80:80 kerzoll/hello_container"
       }
     }
     stage("login to Docker Hub") {
